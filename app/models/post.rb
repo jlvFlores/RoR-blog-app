@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  after_create :update_user_posts_count
+  after_save :update_user_posts_count
 
   def recent_comments
     Comment.where(post_id: id).order(created_at: :desc).limit(5)
