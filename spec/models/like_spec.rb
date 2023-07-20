@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  let(:author) { User.create(name: "Jose", posts_count: 0) }
-  let(:post) { Post.create(author: author, title: "title", comments_count: 0, likes_count: 0) }
+  let(:author) { User.create(name: 'Jose', posts_count: 0) }
+  let(:post) { Post.create(author:, title: 'title', comments_count: 0, likes_count: 0) }
 
-  subject { described_class.new(author: author, post: post) }
+  subject { described_class.new(author:, post:) }
 
   context '#data' do
     it 'should be valid with a post and user' do
