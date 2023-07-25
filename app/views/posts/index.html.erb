@@ -2,9 +2,13 @@
 
 <% @posts.each do |post| %>
   <%= render "shared/post_box", post: post %>
-  <div>
-    <% post.recent_comments.each do |comment| %>
-      <%= render "shared/comment", comment: comment %>
-    <% end %>
-  </div>
+  <% unless post.recent_comments.length == 0 %>
+    <div class="comments-box">
+      <% post.recent_comments.each do |comment| %>
+        <%= render "shared/comment", comment: comment %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
+
+<a class="a-btn" href="#">Pagination</a>
