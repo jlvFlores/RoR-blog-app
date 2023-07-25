@@ -7,6 +7,6 @@
 </div>
 <div>
   <% @post.comments.each do |comment| %>
-    <p> <%= comment.author.name %> <%= comment.text %></p>
+    <%= render "shared/comment", comment: comment %>
   <% end %>
 </div>
