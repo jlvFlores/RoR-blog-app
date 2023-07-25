@@ -6,10 +6,4 @@
   <p><%= @post.text %></p>
 </div>
 
-<% unless @post.comments.length == 0 %>
-  <div class="comments-box">
-    <% @post.comments.each do |comment| %>
-      <%= render "shared/comment", comment: comment %>
-    <% end %>
-  </div>
-<% end %>
+<%= render "shared/comment_box", comments: @post.comments %>
