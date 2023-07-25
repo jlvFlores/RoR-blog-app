@@ -25,7 +25,7 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'GET /show' do
+  context 'GET /show' do
     before { get user_post_path(subject.id, post.id) }
 
     it 'returns http success' do

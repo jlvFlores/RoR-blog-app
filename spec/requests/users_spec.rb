@@ -20,7 +20,7 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'GET /show' do
+  context 'GET /show' do
     before { get user_path(subject.id) }
 
     it 'returns http success' do
