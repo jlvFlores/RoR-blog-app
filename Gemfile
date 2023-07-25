@@ -56,6 +56,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
   # We're using rspec baby!!!
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
 end
 
