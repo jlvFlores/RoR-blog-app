@@ -79,7 +79,11 @@ a {
   justify-content: space-between;
 }
 
-.form-container > form {
+.form-container > a{
+  margin: 0;
+}
+
+form {
   display: flex;
   align-items: start;
   gap: 0.5rem;
