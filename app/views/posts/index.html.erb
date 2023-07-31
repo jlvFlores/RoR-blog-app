@@ -1,8 +1,8 @@
 <%= render "shared/user_box", user: @user %>
 
-<% @posts.each do |post| %>
+<% @posts.includes(:comments, :author).each do |post| %>
   <%= render "shared/post_box", post: post %>
-  <%= render "shared/comment_box", comments: post.recent_comments %>
+  <%= render "shared/comment_box", comments: post.recent_comments.includes(:author) %>
 <% end %>
 
 <a class="a-btn" href="#">Pagination</a>
