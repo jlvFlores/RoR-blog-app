@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:author) { User.create(name: 'Jose', posts_count: 0) }
+  let(:author) { User.create(name: 'Jose') }
 
-  subject { described_class.create(author:, title: 'title', comments_count: 0, likes_count: 0) }
+  subject { described_class.create(author:, title: 'title', text: 'Lorem ipsum') }
 
-  let(:first_comment) { Comment.create(post: subject, author:, text: 'Lorem ipsum') }
-  let(:second_comment) { Comment.create(post: subject, author:, text: 'Lorem ipsum') }
-  let(:third_comment) { Comment.create(post: subject, author:, text: 'Lorem ipsum') }
-  let(:forth_comment) { Comment.create(post: subject, author:, text: 'Lorem ipsum') }
-  let(:fifth_comment) { Comment.create(post: subject, author:, text: 'Lorem ipsum') }
-  let(:sixth_comment) { Comment.create(post: subject, author:, text: 'Lorem ipsum') }
+  let(:first_comment) { Comment.create(post: subject, author:, text: 'text') }
+  let(:second_comment) { Comment.create(post: subject, author:, text: 'text') }
+  let(:third_comment) { Comment.create(post: subject, author:, text: 'text') }
+  let(:forth_comment) { Comment.create(post: subject, author:, text: 'text') }
+  let(:fifth_comment) { Comment.create(post: subject, author:, text: 'text') }
+  let(:sixth_comment) { Comment.create(post: subject, author:, text: 'text') }
 
   let(:first_like) { Comment.create(post: subject, author:, text: 'Lorem ipsum') }
   let(:second_like) { Comment.create(post: subject, author:, text: 'Lorem ipsum') }
