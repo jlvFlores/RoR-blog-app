@@ -1,6 +1,8 @@
 <a class="user-box" href="/users/<%= user.id %>">
-  <img src="<%= user.photo %>" alt="<%= user.name %>">
-  <div>
+  <div class="user-img">
+    <img src="<%= user.photo %>" alt="<%= user.name %>">
+  </div>
+  <div class="user-info">
     <h3><%= user.name %></h3>
     <p class="counter">Number of post: <%= user.posts_count %></p>
   </div>
