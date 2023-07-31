@@ -2,7 +2,7 @@
 
 <% @posts.includes(:comments, :author).each do |post| %>
   <%= render "shared/post_box", post: post %>
-  <%= render "shared/comment_box", comments: post.recent_comments.includes(:author) %>
+  <%= render "shared/comment_box", comments: post.recent_comments %>
 <% end %>
 
 <a class="a-btn" href="#">Pagination</a>
