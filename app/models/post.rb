@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   validates :likes_count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def recent_comments
-    Comment.where(post_id: id).order(created_at: :desc).limit(5)
+    Comment.includes(:post, :author).where(post_id: id).order(created_at: :desc).limit(5)
   end
 
   private
