@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'Posts', type: :feature do
-  before do 
+RSpec.describe 'Posts', type: :feature do
+  before do
     @user = User.create(name: 'Tom', photo: 'tom.png')
     @second_user = User.create(name: 'Lilly', photo: 'lilly.png')
     @post = Post.create(author: @user, title: 'title1', text: 'Lorem ipsum 1')
@@ -35,11 +35,11 @@ RSpec.feature 'Posts', type: :feature do
       end
     end
 
-    it "has a pagination button" do
+    it 'has a pagination button' do
       expect(page).to have_selector("a:contains('Pagination')")
     end
 
-    it "redirects to the corresponding post page when clicking on the post anchor tag" do
+    it 'redirects to the corresponding post page when clicking on the post anchor tag' do
       post_box_selector = ".post-box[href='/users/#{@user.id}/posts/#{@post.id}']"
       find(post_box_selector).click
       expect(page).to have_current_path(user_post_path(@user, @post))
@@ -64,7 +64,5 @@ RSpec.feature 'Posts', type: :feature do
         expect(page).to have_content("#{comment.author.name}: #{comment.text}")
       end
     end
-
-
   end
 end

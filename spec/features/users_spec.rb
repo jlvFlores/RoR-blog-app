@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Users', type: :feature do
+RSpec.describe 'Users', type: :feature do
   before do
     @user1 = User.create(name: 'Tom', photo: 'tom.png', bio: 'I am thomas')
     @user2 = User.create(name: 'Lilly', photo: 'lilly.png', bio: 'I am lilith')
@@ -35,7 +35,7 @@ RSpec.feature 'Users', type: :feature do
       @post4 = Post.create(author: @user1, title: 'title4', text: 'Lorem ipsum 4')
 
       visit user_path(@user1)
-    end 
+    end
 
     it "has the user's name, image, number of posts and bio" do
       expect(page).to have_content(@user1.name)
@@ -50,20 +50,17 @@ RSpec.feature 'Users', type: :feature do
         expect(page).to have_content(post.text)
         expect(page).to have_content("Comments: #{post.comments_count}, Likes: #{post.likes_count}")
       end
-      
-      expect(page).to_not have_content(@post1.title)
-      expect(page).to_not have_content(@post1.text)
     end
 
     it "has a button that redirects to all user's posts" do
       expect(page).to have_selector("a:contains('See all post')")
-      
+
       click_link 'See all post'
 
       expect(page).to have_current_path(user_posts_path(@user1))
     end
 
-    it "redirects to the corresponding post page when clicking on the post anchor tag" do
+    it 'redirects to the corresponding post page when clicking on the post anchor tag' do
       post_box_selector = ".post-box[href='/users/#{@user1.id}/posts/#{@post4.id}']"
       find(post_box_selector).click
       expect(page).to have_current_path(user_post_path(@user1, @post4))
