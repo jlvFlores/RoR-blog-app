@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { described_class.new(name: 'Jose', posts_count: 0) }
-  let(:first_post) { Post.create(author: subject, title: 'first_post', comments_count: 0, likes_count: 0) }
-  let(:second_post) { Post.create(author: subject, title: 'second_post', comments_count: 0, likes_count: 0) }
-  let(:third_post) { Post.create(author: subject, title: 'third_post', comments_count: 0, likes_count: 0) }
-  let(:forth_post) { Post.create(author: subject, title: 'forth_post', comments_count: 0, likes_count: 0) }
+  subject { described_class.new(name: 'Jose') }
+  let(:first_post) { Post.create(author: subject, title: 'first_post', text: 'Lorem ipsum') }
+  let(:second_post) { Post.create(author: subject, title: 'second_post', text: 'Lorem ipsum') }
+  let(:third_post) { Post.create(author: subject, title: 'third_post', text: 'Lorem ipsum') }
+  let(:forth_post) { Post.create(author: subject, title: 'forth_post', text: 'Lorem ipsum') }
 
   context '#data' do
     it 'name should be present' do

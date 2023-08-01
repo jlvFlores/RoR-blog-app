@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   subject { User.create(name: 'Jose') }
-  let(:post) { Post.create(author: subject, title: 'New post') }
+  let(:post) { Post.create(author: subject, title: 'New post', text: 'Lorem ipsum') }
 
   before do
     post
