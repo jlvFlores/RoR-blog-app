@@ -8,10 +8,10 @@
 
 <%= render "shared/comment_box", comments: @post.comments %>
 
-<div class="form-container">
-  <a class="a-btn" href="/users/<%= params[:user_id] %>/posts/ <%= @post.id %>/comments/new">Add comment</a>
-  
+<div class="like-comment-container">
+  <%= link_to "Add comment", new_user_post_comment_path(@post.author, @post), class: "btn" %>
+
   <%= form_with model: Like.new, url: user_post_likes_path(@post.author, @post), local: true do |form| %>
-    <%= form.submit "Like", class: "form-btn" %>
+    <%= form.submit "Like", class: "btn" %>
   <% end %>
 </div>

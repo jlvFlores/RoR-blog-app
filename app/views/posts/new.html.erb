@@ -1,11 +1,15 @@
 <div class="form-container">
   <%= form_with model: @post do |form| %>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <div class="field">
+      <%= form.label :title %><br />
+      <%= form.text_field :title %>
+    </div>
 
-    <%= form.label :text %>
-    <%= form.text_area :text %>
+    <div class="field">
+      <%= form.label :text %><br />
+      <%= form.text_area :text %>
+    </div>
 
-    <%= form.submit "Create Post", class: "form-btn" %>
+    <%= form.submit "Create Post", class: "btn" %>
   <% end %>
 </div>

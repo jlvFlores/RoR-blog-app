@@ -1,6 +1,8 @@
 <%= form_with model: @comment, url: user_post_comments_path(params[:user_id], params[:post_id]) do |form| %>
-  <%= form.label :text %>
-  <%= form.text_area :text %>
+  <div class="field">
+    <%= form.label :text %><br />
+    <%= form.text_area :text %>
+  </div>
 
-  <%= form.submit "Add Comment", class: "form-btn" %>
+  <%= form.submit "Add Comment", class: "btn" %>
 <% end %>
