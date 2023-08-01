@@ -10,7 +10,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rails', '~> 7.0.6'
 
 # Devise
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
