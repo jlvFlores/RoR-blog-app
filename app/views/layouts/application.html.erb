@@ -11,8 +11,17 @@
   </head>
 
   <body>
+    <%  if user_signed_in?  %>
+      <header>
+        <%= link_to "Home", root_path, class: "header-btn" %>
+        <%= link_to "Create Post", new_post_path, class: "header-btn" %>
+        <%= link_to "Sign Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "header-btn" %>
+      </header>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
