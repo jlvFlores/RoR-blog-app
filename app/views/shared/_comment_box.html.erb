@@ -1,5 +1,8 @@
 <div class="comments-box">
   <% comments.each do |comment| %>
-    <p><%= comment.author.name %>: <%= comment.text %></p>
+    <div class="comment-row">
+      <p><%= comment.author.name %>: <%= comment.text %></p>
+      <%= link_to "Delete Comment", user_post_comment_path(comment.author, comment.post, comment), data: {turbo_method: :delete}, class: "btn" if can? :delete, comment %>
+    </div>
   <% end %>
 </div>
