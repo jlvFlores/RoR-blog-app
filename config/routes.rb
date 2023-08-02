@@ -12,8 +12,15 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
+    resources :users, only: [] do
+      member do
+        get :posts
+      end
+    end
+
     resources :posts, only: [] do
       member do
+        get :comments
         post :add_comment
       end
     end
