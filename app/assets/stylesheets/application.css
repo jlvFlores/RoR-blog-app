@@ -82,6 +82,9 @@ header,
 .comments-box {
   border-top: none;
   margin-top: -1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .counter {
@@ -118,4 +121,10 @@ textarea {
 
 .new_user input:not(#user_remember_me) {
   width: 100%;
+}
+
+.comment-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

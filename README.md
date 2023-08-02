@@ -137,6 +137,13 @@ And lastly, run this command to see the project in in your browser.
 - Twitter: [@JoseVaz44312762](https://twitter.com/JoseVaz44312762)
 - LinkedIn: [Jose (Luis) Vazquez](https://www.linkedin.com/in/jose-luis-vazquez/)
 
+👤 **Author 2**
+
+- GitHub: [@oovillagran](https://github.com/oovillagran)
+- Twitter: [@oovillagran](https://twitter.com/oovillagran)
+- LinkedIn: [Oscar Villagrán](https://www.linkedin.com/in/oovillagran/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
