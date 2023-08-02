@@ -5,10 +5,11 @@ class Ability
 
   def initialize(user)
     # can :read, Post
+    
     return unless user.present?
     can :manage, Post, author_id: user.id
-    # return unless user.role == "admin"
-    # can :manage, :all
+    return unless user.role == "admin"
+    can :manage, :all
 
     # Define abilities for the user here. For example:
     #
