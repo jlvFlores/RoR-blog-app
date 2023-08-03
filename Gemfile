@@ -15,6 +15,9 @@ gem 'devise', '~> 4.9'
 # CanCanCan
 gem 'cancancan'
 
+# Rswag
+gem 'rswag'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
