@@ -10,4 +10,12 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
+
+  namespace :api do
+    resources :posts, only: [] do
+      member do
+        post :add_comment
+      end
+    end
+  end
 end
