@@ -15,12 +15,9 @@ describe 'Posts API' do
                    items: {
                      type: :object,
                      properties: {
-                       id: { type: :integer },
-                       title: { type: :string },
-                       text: { type: :string },
-                       comments_count: { type: :integer },
-                       likes_count: { type: :integer },
-                       author_id: { type: :integer },
+                       id: { type: :integer }, author_id: { type: :integer },
+                       title: { type: :string }, text: { type: :string },
+                       comments_count: { type: :integer }, likes_count: { type: :integer },
                        created_at: { type: :string, format: 'date-time' },
                        updated_at: { type: :string, format: 'date-time' }
                      }
@@ -48,7 +45,7 @@ describe 'Posts API' do
       response '200', 'OK' do
         schema type: :object,
                properties: {
-                comments: {
+                 comments: {
                    type: :array,
                    items: {
                      type: :object,
@@ -77,7 +74,7 @@ describe 'Posts API' do
 
   path '/api/posts/{id}/add_comment' do
     parameter name: :id, in: :path, type: :integer, description: "post's id"
-    
+
     post 'Sends a comment ta a given post' do
       tags 'Comments'
       consumes 'application/json'
@@ -87,7 +84,7 @@ describe 'Posts API' do
         properties: {
           text: { type: :string }
         },
-        required: [ 'text' ]
+        required: ['text']
       }
 
       response '201', 'blog created' do
